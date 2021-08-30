@@ -1,0 +1,18 @@
+﻿
+<h3>CounterComp</h3>
+@Cont.Valore
+<button type = "button" @onclick = "Up">Up</button><button type="button" @onclick = "Down">Down</button><button type="submit">Salva</button>
+
+
+@code {
+    [Parameter]
+    public int Skip { get; set; } = 1;
+
+    public Models.ContatoreCli? Cont { get; set; }
+
+    [Parameter]
+    public EventCallback Up { get; set; }
+
+    [Parameter]
+    public EventCallback Down { get; set; }
+}
