@@ -1,0 +1,28 @@
+﻿<h2>Eventi</h2>
+<button class="btn btn-primary mb-4" 
+    @onclick="OnCrea">Crea Evento</button>
+
+<table class= "table">
+    <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Località</th>
+        <th>Data</th>
+    </tr>
+    @foreach(var evento in ListaEl)
+    {
+        <tr>
+            <td>@evento.Id</td>
+            <td>@evento.Nome</td>
+            <td>@evento.Localita</td>
+            <td>@evento.Data</td>
+                <th>
+                <button class="btn btn-warning" 
+                    @onclick="e => OnModifica.InvokeAsync(evento)">Modifica</button>
+                <button class="btn btn-danger" 
+                    @onclick="e => OnElimina.InvokeAsync(evento)">Elimina</button>
+                </th>
+        </tr>
+    }
+</table>
+

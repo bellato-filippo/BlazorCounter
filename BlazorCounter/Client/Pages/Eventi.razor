@@ -1,0 +1,76 @@
+﻿@page "/eventi"
+@using BlazorCounter.Client.Components
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.DependencyInjection
+@using System.Net.Http.Json
+
+@attribute [Authorize]
+@inject HttpClient Http
+
+
+
+@if(EventoCorrente == null) {
+    <ListaEventi ListaEl="ListaEventi" OnElimina="EliminaEvento"
+        OnCrea="CreaEvento" OnModifica="ModificaEvento" />
+} else {
+    <DettaglioEvento 
+        DettaglioElemento="EventoCorrente"
+        OnSalva="SalvaEvento" OnAnnulla="AnnullaOperazione" />
+}
+
+@code 
+{
+    private string? apiUrl = @"http://localhost:5002/api/datievento";
+
+    public Models.Evento? EventoCorrente { get; set; }
+
+    List<Models.ElementoListaEventi> ListaEventi { get; set; }
+        = new List<Models.ElementoListaEventi>();
+
+    protected override Task OnInitializedAsync()
+    {
+        return caricaEventi();
+    }
+
+    private async Task caricaEventi()
+    {
+        ListaEventi = await Http.GetFromJsonAsync<List<Models.ElementoListaEventi>>(apiUrl);
+    }
+
+
+
+    public void CreaEvento()
+    {
+        this.EventoCorrente = new Models.Evento();
+    }
+
+    public async Task ModificaEvento(Models.ElementoListaEventi evento)
+    {
+        this.EventoCorrente = await Http.GetFromJsonAsync<Models.Evento>($"{apiUrl}/{evento.Id}");
+    }
+
+    public async Task SalvaEvento(Models.Evento evento)
+    {
+        if (evento.Id == 0)
+        {
+            await Http.PostAsJsonAsync<Models.Evento>(apiUrl, evento);
+        }
+        else
+        {
+            await Http.PutAsJsonAsync($"{apiUrl}/{evento.Id}", evento);
+        }
+        await caricaEventi();
+        this.EventoCorrente = null;
+    }
+
+    public async void AnnullaOperazione()
+    {
+        this.EventoCorrente = null;
+    }
+
+    public async Task EliminaEvento(Models.ElementoListaEventi evento)
+    {
+        await Http.DeleteAsync($"{apiUrl}/{evento.Id}");
+        await caricaEventi();
+    }
+}
