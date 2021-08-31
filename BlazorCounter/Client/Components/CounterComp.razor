@@ -1,18 +1,13 @@
-﻿
+﻿@using BlazorCounter.Client.Models
 <h3>CounterComp</h3>
-@Cont.Valore
-<button type = "button" @onclick = "Up">Up</button><button type="button" @onclick = "Down">Down</button><button type="submit">Salva</button>
 
+<EditForm Model = "@Cont" OnValidSubmit="@(e => OnSalva.InvokeAsync(Cont))">
+    <label for = "valore">Valore:</label><br>
+    <input type = "text" id = "valore" @bind-value = "Cont.Valore" /><br>
+    <button type = "button" class = "btn btn-primary" @onclick = "Up">Up</button>
+    <button type = "button" class = "btn btn-primary" @onclick = "Down">Down</button>
+    <button type="submit" class="btn btn-primary">Salva</button>
+</EditForm>
 
 @code {
-    [Parameter]
-    public int Skip { get; set; } = 1;
-
-    public Models.ContatoreCli? Cont { get; set; }
-
-    [Parameter]
-    public EventCallback Up { get; set; }
-
-    [Parameter]
-    public EventCallback Down { get; set; }
 }

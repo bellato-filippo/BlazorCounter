@@ -1,10 +1,12 @@
 ﻿@page "/counterpag"
+@using BlazorCounter.Client.Components
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.DependencyInjection
+@using System.Net.Http.Json
 
-<h3>CounterComp</h3>
-@Cont.Valore <br>
-<button type = "button" onclick = "Up">Up</button><button type="button" >Down</button><button type="submit">Salva</button>
+@attribute [Authorize]
+@inject HttpClient Http
+
+<CounterComp />
 
 
-@code 
-{
-}
