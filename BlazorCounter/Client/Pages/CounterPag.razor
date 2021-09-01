@@ -7,6 +7,13 @@
 @attribute [Authorize]
 @inject HttpClient Http
 
-<CounterComp />
+<CounterComp Skip = "1" Cont = "CurrentCount" OnSalva = "SalvaContatore"/>
 
 
+@code {
+    public Models.ContatoreCli CurrentCount { get; set; }
+
+    public async Task SalvaContatore(Models.ContatoreCli cont) {
+
+    }
+}
