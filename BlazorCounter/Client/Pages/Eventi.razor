@@ -24,7 +24,7 @@
 
     public Models.Evento? EventoCorrente { get; set; }
 
-    List<Models.ElementoListaEventi> ListaEventi { get; set; }
+    List<Models.ElementoListaEventi>? ListaEventi { get; set; }
         = new List<Models.ElementoListaEventi>();
 
     protected override Task OnInitializedAsync()
