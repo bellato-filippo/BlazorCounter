@@ -8,7 +8,7 @@ public partial class CounterComp : ComponentBase
     public int Skip { get; set; } = 1;
 
     [Parameter]
-    public Models.ContatoreCli Cont { get; set; } = new Models.ContatoreCli();
+    public Models.ContatoreCli? Cont { get; set; }
 
     [Parameter]
     public EventCallback<Models.ContatoreCli> OnSalva { get; set; }
