@@ -28,16 +28,5 @@
     {
         await Http.PutAsJsonAsync($"{apiUrl}/{5}", con);
         await caricaEventi();
-        /*
-        if (con.Id == 0)
-        {
-            await Http.PostAsJsonAsync<Models.ContatoreCli>(apiUrl, con);
-        }
-        else
-        {
-
-        }
-        */
-        //this.CurrentCount = null;
     }
 }

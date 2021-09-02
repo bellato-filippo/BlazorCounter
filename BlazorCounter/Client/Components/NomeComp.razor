@@ -1,0 +1,10 @@
+﻿@using BlazorCounter.Client.Models
+<EditForm Model="@N" OnValidSubmit = "@(e => OnSalva.InvokeAsync(N))">
+    <input type = "text" id = "nome" @bind-value = "N.Name" placeholder = "Inserisci parola"/><br>
+    <button type = "submit" class = "btn btn-primary">Invia</button>
+</EditForm>
+
+@for(int i = ListaNome.Count - 1; i >= 0; i--)
+{
+    <tr>@ListaNome.ElementAt(i).Name</tr>
+}
