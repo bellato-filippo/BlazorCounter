@@ -13,6 +13,12 @@ public partial class CounterComp : ComponentBase
     [Parameter]
     public EventCallback<Models.ContatoreCli> OnSalva { get; set; }
 
+    [Parameter]
+    public EventCallback Up {  get; set; }
+
+    [Parameter]
+    public EventCallback Down {  get; set; }
+    /*
     public void Up()
     {
         Cont.Valore += Skip;
@@ -22,4 +28,5 @@ public partial class CounterComp : ComponentBase
     {
         Cont.Valore -= Skip;
     }
+    */
 }

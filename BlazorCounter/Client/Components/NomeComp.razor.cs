@@ -10,4 +10,6 @@ public partial class NomeComp : ComponentBase
     public List<Models.NomeCli>? ListaNome { get; set; }
     [Parameter]
     public EventCallback<Models.NomeCli> OnSalva { get; set; }
+    [Parameter]
+    public EventCallback Nav {  get; set; }
 }

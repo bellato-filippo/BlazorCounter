@@ -7,12 +7,14 @@
 @attribute [Authorize]
 @inject HttpClient Http
 
-<CounterComp Skip = "1" Cont = "CurrentCount" OnSalva = "SalvaContatore" />
+<CounterComp Skip = "Salto" Cont = "CurrentCount" OnSalva = "SalvaContatore" Up = "Su" Down = "Giu"/>
 
 @code {
     public Models.ContatoreCli? CurrentCount {  get; set; } = new Models.ContatoreCli();
 
     private string? apiUrl = @"http://localhost:5002/api/ContatoreSer";
+
+    private int Salto = 1;
 
     protected override Task OnInitializedAsync()
     {
@@ -28,5 +30,16 @@
     {
         await Http.PutAsJsonAsync($"{apiUrl}/{5}", con);
         await caricaEventi();
+    }
+
+    public void Su()
+    {
+        CurrentCount.Valore += Salto;
+
+    }
+
+    public void Giu()
+    {
+        CurrentCount.Valore -= Salto;
     }
 }
