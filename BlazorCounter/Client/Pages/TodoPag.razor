@@ -1,0 +1,9 @@
+﻿@page "/todopag"
+@using BlazorCounter.Client.Components
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.DependencyInjection
+
+@attribute [Authorize]
+@inject HttpClient Http
+
+<TodoComp OnSalva = "Salva" TodoSingolo = "TodoCorrente" ListaTodo = "ListaCorrente" OnElimina = "Elimina" />

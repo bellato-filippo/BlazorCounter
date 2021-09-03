@@ -8,4 +8,5 @@ public class EventManagerDbContext : DbContext
     public DbSet<Models.DatiEvento> Eventi  {  get; set; }
     public DbSet<Models.ContatoreSer> Contatore {  get; set; }
     public DbSet<Models.NomeSer> Nome {  get; set; }
+    public DbSet<Models.TodoSer> Todo {  get; set; }
 }

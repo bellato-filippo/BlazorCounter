@@ -26,7 +26,7 @@ public partial class NomePag
 
     public async Task Salvataggio(Models.NomeCli no)
     {
-        await Http.PostAsJsonAsync<Models.NomeCli>(apiUrl, no);
+        await Http.PostAsJsonAsync(apiUrl, no);
         NomeCorrente.Name = "";
         await caricaEventi();
     }
