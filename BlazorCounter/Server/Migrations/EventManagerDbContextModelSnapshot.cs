@@ -72,7 +72,6 @@ namespace BlazorCounter.Server.Migrations
 
                     b.ToTable("Nome");
                 });
-
             modelBuilder.Entity("BlazorCounter.Server.Models.TodoSer", b =>
                 {
                     b.Property<int>("Id")
