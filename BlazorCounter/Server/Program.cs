@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.ResponseCompression;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using BlazorCounter.Server.Data;
+﻿using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,8 +9,6 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddServerSideBlazor();
 
-builder.Services.AddDbContext<EventManagerDbContext>(
-    opt => opt.UseSqlite("DataSource=eventmanager.db"));
 
 
 var app = builder.Build();
