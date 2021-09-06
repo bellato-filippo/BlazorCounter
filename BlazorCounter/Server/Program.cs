@@ -15,6 +15,7 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddDbContext<EventManagerDbContext>(
     opt => opt.UseSqlite("DataSource=eventmanager.db"));
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
