@@ -16,4 +16,9 @@
     <ProjectReference Include="..\Shared\BlazorCounter.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Components\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>
