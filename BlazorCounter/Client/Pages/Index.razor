@@ -1,5 +1,11 @@
 ﻿@page "/"
 @using BlazorCounter.Client.Components
 
-<h1>Event Manager</h1>
-Welcome to your new app.
+@if(Temp.IsAdmin)
+{
+    
+}
+else
+{
+    Redirect();
+}
