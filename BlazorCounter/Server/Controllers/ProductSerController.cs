@@ -24,7 +24,6 @@ namespace BlazorCounter.Server.Controllers
 
         // GET: api/ProductSer
         [HttpGet]
-        [EnableQuery]
         public async Task<ActionResult<IEnumerable<ProductSer>>> GetProduct()
         {
             return await _context.Product.ToListAsync();

@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazorCounter.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210907072054_start")]
-    partial class start
+    [Migration("20210907102421_initial1")]
+    partial class initial1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -17,7 +17,7 @@ namespace BlazorCounter.Server.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "6.0.0-preview.7.21378.4");
 
-            modelBuilder.Entity("BlazorCounter.Server.Models.Product", b =>
+            modelBuilder.Entity("BlazorCounter.Server.Models.ProductSer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -26,9 +26,12 @@ namespace BlazorCounter.Server.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Price")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Prodotto");
+                    b.ToTable("Product");
                 });
 #pragma warning restore 612, 618
         }
