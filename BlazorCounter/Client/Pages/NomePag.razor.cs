@@ -35,4 +35,18 @@ public partial class NomePag
     {
         NavigationManager.NavigateTo("Eventi");
     }
+
+    public async Task Elimina(Models.NomeCli nom)
+    {
+        try
+        {
+            int last = ListaCorrente.Count - 1;
+            int del = ListaCorrente.ElementAt(last).Id;
+            await Http.DeleteAsync($"{apiUrl}/{del}");
+            ListaCorrente = await Http.GetFromJsonAsync<List<Models.NomeCli>>(apiUrl);
+        } catch (System.ArgumentOutOfRangeException ex)
+        {
+            ListaCorrente = await Http.GetFromJsonAsync<List<Models.NomeCli>>(apiUrl);
+        }
+    }
 }

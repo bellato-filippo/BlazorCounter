@@ -12,4 +12,6 @@ public partial class NomeComp : ComponentBase
     public EventCallback<Models.NomeCli> OnSalva { get; set; }
     [Parameter]
     public EventCallback Nav {  get; set; }
+    [Parameter]
+    public EventCallback<Models.NomeCli> OnElimina {  get; set; }
 }
