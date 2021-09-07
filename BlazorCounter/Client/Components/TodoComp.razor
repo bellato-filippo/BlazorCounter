@@ -4,11 +4,19 @@
     <input type = "text" id = "frase" placeholder = "Scrivi qualcosa" @bind-value = "@TodoSingolo.Frase" />
     <button type = "submit" class = "btn btn-primary">Aggiungi</button>
 </EditForm>
-
-@for(int i = ListaTodo.Count - 1; i >= 0; i--)
+<!--
+@for(int i = 0; i < ListaTodo.Count(); i++)
 {
     <tr>
-        <h3>@ListaTodo.ElementAt(i).Frase</h3>
-        <button type = "button" class = "btn btn-danger" @onclick = "@(e => OnElimina.InvokeAsync(TodoSingolo))">Rimuovi</button>
+        <td><h3>@ListaTodo.ElementAt(i).Frase</h3></td>
+        <td><button type = "button" class = "btn btn-danger" @onclick = "@(e => OnElimina.InvokeAsync(ListaTodo.ElementAt(i)))">Rimuovi</button></td>
+    </tr>
+}
+-->
+@foreach(var cri in ListaTodo)
+{
+    <tr>
+        <td><h3>@cri.Frase</h3></td>
+        <td><button type = "button" class = "btn btn-danger" @onclick = "@(e => OnElimina.InvokeAsync(cri))">Rimuovi</button></td>
     </tr>
 }

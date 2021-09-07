@@ -24,12 +24,12 @@ public partial class TodoPag
     {
         await Http.PostAsJsonAsync(apiUrl, t);
         TodoCorrente.Frase = "";
-        CaricaElementi();
+        ListaCorrente = await Http.GetFromJsonAsync<List<Models.TodoCli>>(apiUrl);
     }
 
     public async Task Elimina(Models.TodoCli t)
     {
         await Http.DeleteAsync($"{apiUrl}/{t.Id}");
-        await CaricaElementi();
+        ListaCorrente = await Http.GetFromJsonAsync<List<Models.TodoCli>>(apiUrl);
     }
 }
