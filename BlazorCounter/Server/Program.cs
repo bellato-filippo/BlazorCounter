@@ -13,7 +13,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
 builder.Services.AddDbContext<EventManagerDbContext>(
-    opt => opt.UseSqlite("DataSource=BlazorCounter/Server/eventmanager.db"));
+    opt => opt.UseSqlite("DataSource=eventmanager.db"));
 
 var app = builder.Build();
 

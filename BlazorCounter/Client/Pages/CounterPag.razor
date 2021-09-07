@@ -23,12 +23,12 @@
 
     private async Task caricaEventi()
     {
-        CurrentCount = await Http.GetFromJsonAsync<Models.ContatoreCli>($"{apiUrl}/{5}");
+        CurrentCount = await Http.GetFromJsonAsync<Models.ContatoreCli>($"{apiUrl}/{1}");
     }
 
     public async Task SalvaContatore(Models.ContatoreCli con)
     {
-        await Http.PutAsJsonAsync($"{apiUrl}/{5}", con);
+        await Http.PutAsJsonAsync($"{apiUrl}/{1}", con);
         await caricaEventi();
     }
 
