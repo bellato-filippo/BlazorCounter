@@ -7,13 +7,9 @@
 
   <ItemGroup>
     <Compile Remove="Components\**" />
-    <Compile Remove="Models\**" />
     <Content Remove="Components\**" />
-    <Content Remove="Models\**" />
     <EmbeddedResource Remove="Components\**" />
-    <EmbeddedResource Remove="Models\**" />
     <None Remove="Components\**" />
-    <None Remove="Models\**" />
   </ItemGroup>
 
   <ItemGroup>

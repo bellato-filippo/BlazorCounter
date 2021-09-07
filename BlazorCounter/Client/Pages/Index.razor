@@ -1,1 +1,15 @@
 ﻿@page "/"
+
+@Attribute Authorize
+@inject HttpClient Http
+
+
+@code { public Models.ProductCli Prodotto = new()
+    {
+        Id = 1,
+        Name = "prova",
+        Price = 45,
+    };
+
+
+}
