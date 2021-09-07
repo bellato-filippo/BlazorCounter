@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BlazorCounter.Server.Data;
+using Microsoft.AspNetCore.OData;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,10 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddServerSideBlazor();
 
+builder.Services.AddControllers().AddOData(options => options.Select().Filter().OrderBy());
+
+builder.Services.AddDbContext<ApplicationDbContext>(
+    opt => opt.UseSqlite("DataSource=eventmanager.db"));
 
 
 var app = builder.Build();
@@ -27,6 +33,8 @@ else
     app.UseHsts();
     //app.UseHttpsRedirection();
 }
+
+
 
 app.UseHttpsRedirection();
 

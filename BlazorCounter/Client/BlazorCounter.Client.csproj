@@ -6,19 +6,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Components\**" />
+    <Compile Remove="Models\**" />
+    <Content Remove="Components\**" />
+    <Content Remove="Models\**" />
+    <EmbeddedResource Remove="Components\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <None Remove="Components\**" />
+    <None Remove="Models\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0-preview.7.21378.6" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0-preview.7.21378.6" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0-preview.7.21377.19" />
-    <PackageReference Include="Syncfusion.Blazor" Version="19.2.0.59" />
+    <PackageReference Include="Syncfusion.Blazor.Buttons" Version="19.2.0.59" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Shared\BlazorCounter.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Components\" />
-    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>
