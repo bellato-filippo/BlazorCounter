@@ -11,7 +11,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddServerSideBlazor();
 
-builder.Services.AddControllers().AddOData(options => options.Select().Filter().OrderBy());
+//builder.Services.AddControllers().AddOData(options => options.Select().Filter().OrderBy());
 
 builder.Services.AddDbContext<ApplicationDbContext>(
     opt => opt.UseSqlite("DataSource=eventmanager.db"));
