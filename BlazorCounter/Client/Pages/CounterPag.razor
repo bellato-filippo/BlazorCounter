@@ -3,11 +3,21 @@
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.Extensions.DependencyInjection
 @using System.Net.Http.Json
+@using Syncfusion.Blazor.ProgressBar
+@using Microsoft.Extensions.Logging
 
 @attribute [Authorize]
 @inject HttpClient Http
 
 <CounterComp Skip = "Salto" Cont = "CurrentCount" OnSalva = "SalvaContatore" Up = "Su" Down = "Giu"/>
+
+<SfProgressBar Type="ProgressType.Circular" Value="100" Height="60" Width="100%" TrackColor="#FFFFFF"
+               ShowProgressValue="true" ProgressColor="#2BB20E" TrackThickness="24" CornerRadius="CornerType.Round"
+               ProgressThickness="24" Minimum="0" Maximum="100">
+    <ProgressBarAnimation Enable="true" Duration="10000" Delay="100"></ProgressBarAnimation>
+</SfProgressBar>
+
+
 
 @code {
     public Models.ContatoreCli? CurrentCount {  get; set; } = new Models.ContatoreCli();

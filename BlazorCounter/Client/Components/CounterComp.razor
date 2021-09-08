@@ -1,11 +1,14 @@
 ﻿@using BlazorCounter.Client.Models
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Inputs
 <h3>CounterComp</h3><br>
 
 
 <EditForm Model = "@Cont" OnValidSubmit="@(e => OnSalva.InvokeAsync(Cont))">
     <label for = "valore">Valore:</label><br>
     <input type = "text" id = "valore" @bind-value = "Cont.Valore" /><br>
-    <button type = "button" class = "btn btn-primary" @onclick = "Up">Up</button>
-    <button type = "button" class = "btn btn-primary" @onclick = "Down">Down</button>
-    <button type="submit" class="btn btn-primary">Salva</button>
+    <SfButton CssClass="e-primary" @onclick = "Up">Up</SfButton>
+    <SfButton CssClass="e-primary" @onclick = "Down">Down</SfButton>
+    <SfButton type="submit" CssClass="e-primary">Salva</SfButton>
 </EditForm>
+
