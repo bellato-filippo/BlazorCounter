@@ -1,8 +1,22 @@
 ﻿<table class = "table">
     <tr>
-        @foreach(string s in Columns)
-        {
-            <th>@s</th>
-        }
+        <th><a @onclick = "OrderId">Id</a></th>
+        <th><a @onclick = "OrderName">Nome</a></th>
+        <th><a @onclick = "OrderDescription">Descrizione</a></th>
+        <th><a @onclick = "OrderPrice">Prezzo</a></th>
+        <th><a @onclick = "OrderDate">Data</a></th>
+        <th>>Disponibile</th>
     </tr>
+    @foreach(var i in ListaProd)
+    {
+        <tr>
+            <td>@i.Id</td>
+            <td>@i.Name</td>
+            <td>@i.Description</td>
+            <td>@i.Price</td>
+            <td>@i.CreationDate.ToShortDateString()</td>
+            <td>@( i.IsAvailable ? "si" : "no" )</td>
+        </tr>
+    }
 </table>
+
