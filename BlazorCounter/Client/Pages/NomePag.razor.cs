@@ -44,7 +44,7 @@ public partial class NomePag
             int del = ListaCorrente.ElementAt(last).Id;
             await Http.DeleteAsync($"{apiUrl}/{del}");
             ListaCorrente = await Http.GetFromJsonAsync<List<Models.NomeCli>>(apiUrl);
-        } catch (System.ArgumentOutOfRangeException ex)
+        } catch (System.ArgumentOutOfRangeException)
         {
             ListaCorrente = await Http.GetFromJsonAsync<List<Models.NomeCli>>(apiUrl);
         }
