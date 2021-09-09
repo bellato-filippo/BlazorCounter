@@ -1,0 +1,16 @@
+﻿@using BlazorCounter.Client.Components
+
+<Grid Columns = "Title" />
+<table class = "table">
+    <tr>
+        @foreach(var i in ListaProd)
+        {
+            <td>i.Id</td>
+            <td>i.Name</td>
+            <td>i.Description</td>
+            <td>i.Price</td>
+            <td>i.CreationDate</td>
+            <td>i.IsAvailable</td>
+        }
+    </tr>
+</table>

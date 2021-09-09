@@ -1,0 +1,10 @@
+﻿@page "/prodotti"
+@using BlazorCounter.Client.Components
+
+<ProductGrid ListaProd = "ListaCorrente"/>
+
+@code {
+    List<Models.ProdottoCli>? ListaCorrente { get; set; }
+
+    ListaCorrente.Add(new Models.ProdottoCli());
+}
