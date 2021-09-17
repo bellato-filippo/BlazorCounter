@@ -1,2 +1,9 @@
-﻿Componente 1: @Value1 <br>
+﻿Componente 1: @Value1.Value 
+@if (Compare)
+{
+    <span style = "color: #ff0000">@Value1.CompareValue</span>
+}
+<br>
 <button type = "button" @onclick = "Up">Up</button>
+<button type = "button" @onclick = "CompareOriginalValue">Compara</button>
+<button type = "button" @onclick = "Conferma">Conferma</button>

@@ -1,8 +1,12 @@
 ﻿@page "/binding"
 @using BlazorCounter.Client.Components
 
-<Binding1 Value1 = "Value" Up = "Su"/>
+<Binding1 Value1 = "Val" Up = "Su" Compare = "Compara" CompareOriginalValue = "CompareOriginal" Conferma = "Ok" />
 <br>
-<Binding2 Value2 = "Value" />
+<Binding2 Value2 = "Val" Compare = "Compara" />
 <br>
-Pagina: @Value
+Pagina: @Val.Value
+@if (Compara)
+{
+    <span style = "color: #ff0000">@Val.CompareValue</span>
+}
