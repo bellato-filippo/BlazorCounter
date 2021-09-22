@@ -45,7 +45,7 @@ public class DatiEventoController : ControllerBase
     }
 
     [HttpPost]
-    public IActionResult Post(BlazorCounter.Client.Models.Evento item)
+    public IActionResult Post(Client.Models.Evento item)
     {
         if (ModelState.IsValid)
         {

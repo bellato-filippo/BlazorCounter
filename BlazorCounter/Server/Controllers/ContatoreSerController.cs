@@ -40,7 +40,7 @@ public class ContatoreSerController : ControllerBase
     
     
     [HttpPost]
-    public IActionResult Post(BlazorCounter.Client.Models.ContatoreCli item)
+    public IActionResult Post(Client.Models.ContatoreCli item)
     {
         if (ModelState.IsValid)
         {
