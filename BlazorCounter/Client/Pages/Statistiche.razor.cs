@@ -401,4 +401,30 @@ public partial class Statistiche
             i++;
         }
     }
+
+    public void RandomEqual()
+    {
+        int i = 0;
+        int max = int.MaxValue;
+        int zero = 1;
+        int one = 1;
+        int count = 0;
+        while (i < max)
+        {
+            if (Ran.NextDouble() > 0.5)
+                zero++;
+            else
+                one++;
+
+            if (one == zero)
+            {
+                count++;
+                Console.WriteLine("Number: " + one + " Count: " + count);
+            }
+
+            if (i % 10000000 == 0)
+                Console.WriteLine("a");
+            i++;
+        }
+    }
 }
