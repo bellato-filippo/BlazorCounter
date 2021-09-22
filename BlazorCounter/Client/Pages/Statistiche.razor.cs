@@ -205,8 +205,8 @@ public partial class Statistiche
 
     public void BinarySum()
     {
-        string n1 = ToBinary(95);
-        string n2 = ToBinary(45);
+        string n1 = ToBinary(734577356);
+        string n2 = ToBinary(701456247);
 
 
 
@@ -314,6 +314,9 @@ public partial class Statistiche
             {
                 Console.WriteLine((cerchio/quadrato)*4);
             }
+
+            if ((cerchio/quadrato)*4 == 3.14159265358979323)
+                Console.WriteLine((cerchio/quadrato)*4);
             i++;
         }
 
